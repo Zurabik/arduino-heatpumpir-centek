@@ -1,6 +1,6 @@
-#include <AUXHeatpumpIR.h>
+#include <AUXCentekHeatpumpIR.h>
 
-AUXHeatpumpIR::AUXHeatpumpIR() : HeatpumpIR()
+AUXCentekHeatpumpIR::AUXCentekHeatpumpIR() : HeatpumpIR()
 {
   static const char model[] PROGMEM = "AUX";
   static const char info[]  PROGMEM = "{\"mdl\":\"aux\",\"dn\":\"AUX\",\"mT\":16,\"xT\":30,\"fs\":5}";
@@ -10,7 +10,7 @@ AUXHeatpumpIR::AUXHeatpumpIR() : HeatpumpIR()
 }
 
 
-void AUXHeatpumpIR::send(IRSender& IR, uint8_t powerModeCmd, uint8_t operatingModeCmd, uint8_t fanSpeedCmd, uint8_t temperatureCmd, uint8_t swingVCmd, uint8_t swingHCmd)
+void AUXCentekHeatpumpIR::send(IRSender& IR, uint8_t powerModeCmd, uint8_t operatingModeCmd, uint8_t fanSpeedCmd, uint8_t temperatureCmd, uint8_t swingVCmd, uint8_t swingHCmd)
 {
   // Sensible defaults for the heat pump mode
 
@@ -82,7 +82,7 @@ void AUXHeatpumpIR::send(IRSender& IR, uint8_t powerModeCmd, uint8_t operatingMo
 }
 
 
-void AUXHeatpumpIR::sendAUX(IRSender& IR, uint8_t powerMode, uint8_t operatingMode, uint8_t fanSpeed, uint8_t temperature, uint8_t swingV, uint8_t swingH)
+void AUXCentekHeatpumpIR::sendAUX(IRSender& IR, uint8_t powerMode, uint8_t operatingMode, uint8_t fanSpeed, uint8_t temperature, uint8_t swingV, uint8_t swingH)
 {
   // ON, HEAT, AUTO FAN, +24 degrees
   uint8_t AUXTemplate[] = { 0xC3, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x00 };

@@ -1,5 +1,5 @@
 /*
-    AUX heatpump control (remote control YKR-N/002E, YKR-P/002E)
+    AUX heatpump control (remote control YKR-T/121E)
 */
 #ifndef AUXCentekHeatpumpIR_h
 #define AUXCentekHeatpumpIR_h
